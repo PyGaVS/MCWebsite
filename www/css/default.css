@@ -1,0 +1,311 @@
+
+html
+{
+    color: white;   
+    font: 1rem 'minecraftia', sans-serif;
+}
+
+body.light {
+    background-image: url("img/day.jpg");
+}
+
+body.dark {
+    background-image: url("img/night.jpg");
+
+    .header-container {
+        border: solid 2px rgba(255, 255, 255, 0.90);
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
+        url("img/grass.png");
+        
+    }
+
+    .header-selected-item a {
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
+        url("img/cobblestone.jpeg");
+        background-size: contain;
+    }
+
+    .header-item a:hover
+    {
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("img/dirt.png");
+    }
+
+    .header-item a, .header-selected-item a {
+        color: rgba(255, 255, 255, 0.90);
+    }
+
+    .fly {
+        background-image: url('img/Phantom.webp');
+        min-width: 9rem;
+        width: 9rem;
+        height: 8rem;
+    }
+
+    .wood-container {
+        background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+        url("img/wood_plank.png");
+    }
+}
+
+body {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+@font-face {
+    font-family: minecraftia;
+    src: url("font/minecraftia.ttf");
+}
+
+.header-container
+{
+    border: solid 3px black;
+    background-image: url("img/grass.png");
+    background-size: contain;
+    margin-top: 15px;   
+    max-width: 100%;
+    justify-content: center;
+    height: min-content;
+    width: min-content;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    text-shadow: 2px 2px #000A;
+}
+
+.header-item, .header-selected-item
+{
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    width: 5.2rem;
+    height: 5.2rem;
+    justify-content: center;
+    line-height: 1.5;
+}
+
+.header-item a, .header-selected-item a 
+{
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+    line-height: 2;
+
+}
+
+@media (max-width: 370px) {
+    .header-item, .header-selected-item {
+        width: 3rem;
+        min-width: 3rem;
+        height: 3rem;
+        line-height: 1;
+        font-size: 8px;
+    }
+}
+
+.header-item a:hover
+{
+    background-image: url("img/dirt.png");
+    background-size: contain;
+    color: white;
+    text-decoration: none;
+}
+
+.header-selected-item
+{
+    background-image: url("img/cobblestone.jpeg");
+    background-size: contain;
+    color: white;
+    text-decoration: none;
+}
+
+a.mc-button {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    height: 2.5rem;
+    width: 25rem;
+    
+    background-color: #999;
+    background-image: url("img/minecraft_btn.png");
+    background-size: cover;
+    image-rendering: pixelated;
+	border: 2px solid black;
+    font: 1rem 'minecraftia', sans-serif;
+    line-height: 3.1;
+
+	color: #DDD;
+	text-shadow: 2px 2px #000A;
+	box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+a.mc-button:hover {
+    background-image: 
+        linear-gradient(rgba(100, 100, 255, 0.45), rgba(100, 100, 255, 0.45)), 
+        url("img/minecraft_btn.png");
+	text-shadow: 2px 2px #202013CC;
+	color: #FFFFA0;
+    box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+}
+
+a.mc-button:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #FFF5;
+}
+
+div.mc-button {
+    width: 25rem;
+    display: flex;
+    gap: 6px;
+}
+
+div.center {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 170px;
+    margin-right: 1%;
+    margin-left: 1%;
+    max-width: 100%;
+}
+
+div.center * {
+    max-width: 100%;
+}
+
+@keyframes flying {
+    from, to { transform: translate(-50%, -80%); }
+    50% { transform: translate(-50%, -50%); }
+}
+@media (min-width: 640px) {
+    div.fly {
+        position: fixed;
+        z-index: -1;
+        left: 17%;
+        top: 40%;
+        width: 12rem;
+        height: 8rem;
+        background-image: url('img/alex\ elytra.png');
+        background-size: contain;
+        animation: flying 5s infinite;
+    }
+}
+
+@media (max-width: 640px) {
+    div.fly {
+        position: fixed;
+        z-index: -1;
+        left: 30%;
+        top: 85%;
+        min-width: 12rem;
+        min-height: 8rem;
+        background-image: url('img/alex\ elytra.png');
+        background-size: contain;
+        animation: flying 5s infinite;
+    }
+}
+
+.wood-container {
+    background-image: url("img/wood_plank.png");
+    background-size: 5.2rem;
+    border: solid 3px black;
+    color: black;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    padding-left: 15px;
+}
+
+div.chat-page {
+    display: flex;
+    flex-direction: column;
+    min-width: 90%;
+    height: 33rem;
+    padding: 5px;
+    padding-left: 15px;
+    margin: 1%;
+}
+
+div.chat-page > .wood-container {
+    min-height: 30rem;
+    font-size: 1.5rem;
+}
+
+form.send-message {
+    margin-top: 4px;
+    display:flex;
+    width: 100%;
+    border: solid black;
+    min-height: 2.5rem;
+    color: white;
+    background-color: rgb(67, 67, 67);
+}
+
+form.send-message * {
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    margin: 0px 5px 0px 5px;
+}
+
+input.message-text {
+    margin: 2px;
+    flex-grow: 2;
+    height: 86%;
+    color: white;
+    font-size: 1rem;
+}
+
+input.message-text:focus {
+    border: none
+}
+
+button.send-button {
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+button.send-button:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+button.send-button:active {
+    background-color: rgba(255, 255, 255, 0.20);
+}
+
+input.message-color {
+    cursor: grab;
+}
+
+button.light-theme, button.dark-theme {
+    width: 10rem;
+    height: 10rem;
+}
+
+/*
+div {
+    border: solid white;
+}
