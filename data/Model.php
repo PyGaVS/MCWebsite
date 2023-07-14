@@ -2,7 +2,7 @@
 
 class Model {
 
-    private static function _getTable(){
+    protected static function _getTable(){
         $class = get_called_class();
         $class[0] = strtolower($class[0]);
         return $class;

@@ -15,11 +15,6 @@ class MenuController {
 
     public static function defaultAction(){
         $tabTitle = "";
-        $results = Mob::all();
-        $mobs = [];
-        foreach ($results as $result){
-            $mobs[] = new Mob($result['id'], $result['name'], $result['name_fr'], $result['score']);
-        }
         include('../page/menu/index.php');
     }
 

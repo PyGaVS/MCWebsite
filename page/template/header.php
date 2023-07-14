@@ -28,7 +28,7 @@ if (isset($_GET['route'])) {
         $html = '';
         $items = [
             ['menu', 'Menu'],
-            ['vs', 'Rank mobs'],
+            ['challenge', 'Challenge'],
             ['chat', 'Chat'],
             ['settings', 'Settings']
         ];

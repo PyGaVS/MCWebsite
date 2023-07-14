@@ -1,7 +1,7 @@
 <?php
 $ENV =[
     // Paramètres pour l'application
-    'APP_NAME'    => 'MCParadise',
+    'APP_NAME'    => 'MCWebsite',
     'APP_VERSION' => 'v0',
     // Paramètres pour l'accès à la base de données
     'DB_HOST'     => 'localhost',

@@ -37,8 +37,8 @@ switch($route){
         MobsController::switchAction($action);
         break;
 
-    case 'vs':
-        VsController::switchAction($action);
+    case 'challenge':
+        ChallengeController::switchAction($action);
         break;
     
     default:

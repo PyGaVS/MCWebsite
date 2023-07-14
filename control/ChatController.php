@@ -18,7 +18,7 @@ class ChatController {
 
     public static function defaultAction(){
         $tabTitle = "";
-        $results = Chat::all();
+        $results = Chat::allByDate();
         $chats = [];
         foreach ($results as $result){
             $chats[] = new Chat($result['id'], $result['content'], $result['date'], $result['color']);

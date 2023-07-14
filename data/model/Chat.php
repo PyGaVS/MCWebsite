@@ -22,6 +22,8 @@ class Chat extends Model {
     public static function create($element) {
         $element[0] = explode('\'',$element[0]);
         $element[0] = implode("\'",$element[0]);
+        $element[0] = explode("<", $element[0]);
+        $element[0] = implode("&lt;", $element[0]);
         $request="INSERT INTO `chat` (`id`, `content`, `color`) VALUES
                 (NULL, '" . $element[0] . "', '".$element[1]."')";
         
@@ -31,9 +33,9 @@ class Chat extends Model {
 
     public static function allByDate() {
         $request='SELECT * FROM '.self::_getTable().
-        'WHERE CAST(date AS DATE) = CAST(GETDATE() AS DATE);
+        ' WHERE DATE(date) = CURDATE()
         ORDER BY date ASC';
-        return Connection::query("SELECT * FROM ".self::_getTable());
+        return Connection::query($request);
     }
 
 

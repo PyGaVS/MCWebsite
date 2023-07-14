@@ -7,7 +7,9 @@ foreach ($mobs as $mob){
     echo $mob;
 }
  */?>
-<button class="light-theme">Light theme</button>
-<button class="dark-theme">Dark theme</button>
+<div class = "settings-page">
+<button class="light-theme">light</button>
+<button class="dark-theme">dark</button>
+</div>
 
 <?php include('../page/template/footer.php');?>

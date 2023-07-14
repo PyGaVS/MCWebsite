@@ -24,6 +24,10 @@ switch ($argv[1]) {
     case "seed" :
         artisan_seed();
         break;
+    case "reset" :
+        resetChat();
+        break;
+
     default :
         var_dump(" This option doesn't exist !");
         break;
@@ -122,6 +126,7 @@ function artisan_migrate_minimum() {
         id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(255),
         name_fr VARCHAR(255),
+        hp INT,
         score INT
         );';
     echo (0 ==Connection::exec($request)) ? '-' : 'x';
@@ -193,70 +198,73 @@ function artisan_seed_minimum() {
             echo (0 ==Connection::exec($request)) ? '-' : 'x';*/
 
             $mobs = [
-                ["Creeper", "Creeper"],
-                ["Zombie", "Zombie"],
-                ["Skeleton", "Squelette"],
-                ["Spider", "Araignée"],
-                ["Cave Spider", "Araignée de grotte"],
-                ["Enderman", "Enderman"],
-                ["Witch", "Sorcière"],
-                ["Slime", "Slime"],
-                ["Magma Cube", "Cube de Magma"],
-                ["Blaze", "Blaze"],
-                ["Ghast", "Ghast"],
-                ["Wither Skeleton", "Squelette Wither"],
-                ["Guardian", "Gardien"],
-                ["Elder Guardian", "Gardien Ancien"],
-                ["Drowned", "Noyé"],
-                ["Zombie Villager", "Villageois Zombie"],
-                ["Husk", "Husk"],
-                ["Stray", "Égaré"],
-                ["Polar Bear", "Ours polaire"],
-                ["Wolf", "Loup"],
-                ["Ocelot", "Ocelot"],
-                ["Cat", "Chat"],
-                ["Cow", "Vache"],
-                ["Pig", "Cochon"],
-                ["Sheep", "Mouton"],
-                ["Chicken", "Poulet"],
-                ["Rabbit", "Lapin"],
-                ["Bat", "Chauve-souris"],
-                ["Squid", "Calamar"],
-                ["Dolphin", "Dauphin"],
-                ["Turtle", "Tortue"],
-                ["Panda", "Panda"],
-                ["Villager", "Villageois"],
-                ["Iron Golem", "Golem de fer"],
-                ["Snow Golem", "Golem de neige"],
-                ["Ender Dragon", "Dragon de l\'Ender"],
-                ["Wither", "Wither"],
-                ["Phantom", "Phantom"],
-                ["Evoker", "Évocateur"],
-                ["Vex", "Vex"],
-                ["Pillager", "Pillard"],
-                ["Ravager", "Ravageur"],
-                ["Vindicator", "Vindicateur"],
-                ["Illusioner", "Illusionniste"],
-                ["Bee", "Abeille"],
-                ["Piglin", "Cochonlin"],
-                ["Hoglin", "Hoglin"],
-                ["Zoglin", "Zoglin"],
-                ["Strider", "Dilème"],
-                ["Piglin Brute", "Cochonlin brutal"],
-                ["Axolotl", "Axolotl"],
-                ["Glow Squid", "Calmar luisant"],
-                ["Goat", "Chèvre"],
-                ["Warden", "Gardien"]
+                ["Creeper", "Creeper", 20],
+                ["Zombie", "Zombie", 20],
+                ["Skeleton", "Squelette", 20],
+                ["Spider", "Araignée", 16],
+                ["Cave Spider", "Araignée venimeuse", 12],
+                ["Enderman", "Enderman", 40],
+                ["Witch", "Sorcière", 26],
+                ["Slime", "Slime", 1],
+                ["Magma Cube", "Cube de Magma", 4],
+                ["Blaze", "Blaze", 20],
+                ["Ghast", "Ghast", 10],
+                ["Wither Skeleton", "Squelette Wither", 20],
+                ["Guardian", "Gardien", 30],
+                ["Elder Guardian", "Gardien Ancien", 80],
+                ["Drowned", "Noyé", 20],
+                ["Zombie Villager", "Villageois Zombie", 20],
+                ["Husk", "Husk", 20],
+                ["Stray", "Vagabond", 20],
+                ["Polar Bear", "Ours polaire", 30],
+                ["Wolf", "Loup", 8],
+                ["Ocelot", "Ocelot", 10],
+                ["Cat", "Chat", 10],
+                ["Cow", "Vache", 10],
+                ["Pig", "Cochon", 10],
+                ["Sheep", "Mouton", 8],
+                ["Chicken", "Poulet", 4],
+                ["Rabbit", "Lapin", 3],
+                ["Bat", "Chauve-souris", 6],
+                ["Squid", "Calamar", 10],
+                ["Dolphin", "Dauphin", 10],
+                ["Turtle", "Tortue", 30],
+                ["Panda", "Panda", 20],
+                ["Villager", "Villageois", 20],
+                ["Iron Golem", "Golem de fer", 100],
+                ["Snow Golem", "Golem de neige", 4],
+                ["Ender Dragon", "Dragon de l\'Ender", 200],
+                ["Wither", "Wither", 300],
+                ["Phantom", "Phantom", 20],
+                ["Evoker", "Évocateur", 24],
+                ["Vex", "Vex", 14],
+                ["Pillager", "Pillard", 24],
+                ["Ravager", "Ravageur", 100],
+                ["Vindicator", "Vindicateur", 24],
+                ["Illusioner", "Illusionniste", 32],
+                ["Bee", "Abeille", 10],
+                ["Piglin", "Piglin", 16],
+                ["Hoglin", "Hoglin", 40],
+                ["Zoglin", "Zoglin", 40],
+                ["Strider", "Dilème", 20],
+                ["Piglin Brute", "Piglin barbare", 50],
+                ["Axolotl", "Axolotl", 14],
+                ["Glow Squid", "Calamar luisant", 10],
+                ["Goat", "Chèvre", 12],
+                ["Warden", "Gardien", 300],
             ];
         foreach($mobs as $mob) {
             echo (0 ==Mob::create($mob)) ? '-' : 'x';
         }
 
         echo " done\n";
-    }
-    
+    }    
     //mob
     seedMobs();
+}
+function resetChat() {
+    echo "RESETING CHAT TABLE :";
+    echo (0 == Connection::exec('TRUNCATE chat')) ? '-' : 'x';
 }
 
 

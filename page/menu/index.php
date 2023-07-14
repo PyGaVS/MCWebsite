@@ -8,10 +8,10 @@ foreach ($mobs as $mob){
 } <?="aa"?>
  */?>
 <div class="center">
-    <div class="mc-button"><a href="?route=vs" class = "mc-button">Rank mobs</a></div>
+    <div class="mc-button"><a href="?route=challenge" class = "mc-button">Challenges</a></div>
     <div class="mc-button"><a href="?route=chat" class = "mc-button">Chat</a></div>
     <div class="mc-button">
-        <a href="https://portfolio-phi-eight-17.vercel.app/" target="_blank" class = "mc-button">Author</a>
+        <a href="https://portfolio-phi-eight-17.vercel.app/" target="_blank" class = "mc-button">Credit</a>
         <a href="?route=settings" class = "mc-button">Settings</a>
     </div>
 

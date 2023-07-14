@@ -7,6 +7,11 @@ html
 
 body.light {
     background-image: url("img/day.jpg");
+
+    .light-theme {
+        border: solid black 2px;
+        color: black;
+    }
 }
 
 body.dark {
@@ -49,6 +54,12 @@ body.dark {
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
         url("img/wood_plank.png");
+    }
+
+    .dark-theme {
+        border: solid white 2px;
+        color: white;
+        
     }
 }
 
@@ -176,6 +187,17 @@ div.mc-button {
     gap: 6px;
 }
 
+div.fixed-mc-button {
+    position: fixed;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 90%;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 div.center {
     display: flex;
     gap: 10px;
@@ -300,11 +322,47 @@ input.message-color {
     cursor: grab;
 }
 
-button.light-theme, button.dark-theme {
-    width: 10rem;
-    height: 10rem;
+div.settings-page {
+    margin-left: 45px;
 }
 
+button.light-theme, button.dark-theme {
+    width: 14.24rem;
+    height: 8rem;
+    background-color: transparent;
+    border: none;
+    color: transparent;
+    font: 2rem "minecraftia";
+    line-height: 4.4;
+}
+
+button.light-theme {
+    background-image: url("img/day.jpg");
+    background-position: center;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+    background-size: 12rem;
+}
+
+button.dark-theme {
+    background-image: url("img/night.jpg");
+    background-position: center;
+
+    background-repeat: no-repeat;
+    background-size: 12rem;
+}
+
+@keyframes yellow-animate {
+    from, to { font-size: 1rem; }
+    50% { font-size: 102%; }
+}
+.yellow-text {
+    color: #eeff33;
+    text-shadow: 2px 2px #000A;
+    animation: yellow-animate 0.5s infinite;
+
+}
 /*
 div {
     border: solid white;
