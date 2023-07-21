@@ -7,7 +7,7 @@ $ENV =[
     'DB_HOST'     => 'localhost',
     'DB_DATABASE' => 'MCMobRanker_v0',
     'DB_USERNAME' => 'PyGaVS',
-    'DB_PASSWORD' => 'ibxh328*gi73tytX'
+    'DB_PASSWORD' => 'HIDDEN'
 ];
 
 /*
