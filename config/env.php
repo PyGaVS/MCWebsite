@@ -5,7 +5,7 @@ $ENV =[
     'APP_VERSION' => 'v0',
     // Paramètres pour l'accès à la base de données
     'DB_HOST'     => 'localhost',
-    'DB_DATABASE' => 'MCMobRanker_v0',
+    'DB_DATABASE' => '',
     'DB_USERNAME' => 'PyGaVS',
     'DB_PASSWORD' => 'HIDDEN'
 ];
