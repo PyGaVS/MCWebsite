@@ -7,17 +7,17 @@ html
 
 body.light {
     background-image: url("img/day.jpg");
-
-    .light-theme {
+}
+    
+body.light .light-theme {
         border: solid black 2px;
         color: black;
     }
-}
 
 body.dark {
     background-image: url("img/night.jpg");
-
-    .header-container {
+}
+body.dark .header-container {
         border: solid 2px rgba(255, 255, 255, 0.90);
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
@@ -25,43 +25,42 @@ body.dark {
         
     }
 
-    .header-selected-item a {
+body.dark .header-selected-item a {
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), 
         url("img/cobblestone.jpeg");
         background-size: contain;
     }
 
-    .header-item a:hover
+body.dark .header-item a:hover
     {
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
         url("img/dirt.png");
     }
 
-    .header-item a, .header-selected-item a {
+body.dark .header-item a, .header-selected-item a {
         color: rgba(255, 255, 255, 0.90);
     }
 
-    .fly {
+body.dark .fly {
         background-image: url('img/Phantom.webp');
         min-width: 9rem;
         width: 9rem;
         height: 8rem;
     }
 
-    .wood-container {
+body.dark .wood-container {
         background-image: 
         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
         url("img/wood_plank.png");
     }
 
-    .dark-theme {
+body.dark .dark-theme {
         border: solid white 2px;
         color: white;
         
     }
-}
 
 body {
     background-attachment: fixed;
@@ -268,6 +267,7 @@ div.chat-page {
 }
 
 div.chat-page > .wood-container {
+    text-shadow: 2px 2px white;
     min-height: 30rem;
     font-size: 1.5rem;
 }
