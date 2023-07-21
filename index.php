@@ -1,1 +1,1 @@
-<a href="http://mcwebsite.free.nf/www">Back to menu</a>
+<a href="http://localhost/dev/MCMobRanker/www/">Back to menu</a>
