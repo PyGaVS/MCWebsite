@@ -9,6 +9,9 @@ foreach ($mobs as $mob){
  */?>
 <div class="chat-page">
 <div class="wood-container" id="chat">
+    <p>Ce chat se réinitialize tout les jours, cependant ne donnez pas vos informations personnels tel que : 
+        votre numéro de téléphone, votre adresse ou des informations sur votre compte bancaire /!\
+    </p>
     <?php 
     foreach ($chats as $chat){
         echo $chat;
